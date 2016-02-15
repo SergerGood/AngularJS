@@ -19,24 +19,34 @@ eventsApp.controller('EventController',
                     creationName: 'Bob',
                     duration: '1 hr',
                     level: 'Advanced',
-                    abstract: 'Tra ta ta'
+                    abstract: 'Tra ta ta',
+                    upVoteCount: 0
                 },
                 {
                     name: 'Scopes for fan and profit',
                     creationName: 'John',
                     duration: '30 mins',
                     level: 'Introductory',
-                    abstract: 'Tra ta ta'
+                    abstract: 'Tra ta ta',
+                    upVoteCount: 0
                 },
                 {
                     name: 'Well Behaved Controllers',
                     creationName: 'Jane',
                     duration: '2 hours',
                     level: 'Intermediate',
-                    abstract: 'Tra ta ta'
+                    abstract: 'Tra ta ta',
+                    upVoteCount: 0
                 }
             ]
         };
 
+        $scope.upVoteSession = function (session) {
+            session.upVoteCount++;
+        }
+
+        $scope.downVoteSession = function (session) {
+            session.upVoteCount--;
+        }
     }
 );
