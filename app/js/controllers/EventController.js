@@ -24,7 +24,7 @@ eventsApp.controller('EventController',
                 {
                     name: 'Directives Masterclass',
                     creationName: 'Bob',
-                    duration: '1 hr',
+                    duration: 1,
                     level: 'Advanced',
                     abstract: 'Tra ta ta',
                     upVoteCount: 0
@@ -32,7 +32,7 @@ eventsApp.controller('EventController',
                 {
                     name: 'Scopes for fan and profit',
                     creationName: 'John',
-                    duration: '30 mins',
+                    duration: 2,
                     level: 'Introductory',
                     abstract: 'Tra ta ta',
                     upVoteCount: 0
@@ -40,7 +40,7 @@ eventsApp.controller('EventController',
                 {
                     name: 'Well Behaved Controllers',
                     creationName: 'Jane',
-                    duration: '2 hours',
+                    duration: 4,
                     level: 'Intermediate',
                     abstract: 'Tra ta ta',
                     upVoteCount: 0
