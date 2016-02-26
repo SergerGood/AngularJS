@@ -1,4 +1,4 @@
-eventsApp.factory('evenData', function ($http) {
+eventsApp.factory('evenData', function ($http, $log) {
     return{
         getEvent: function(successscb){
             $http({method: 'GET', url:'/data/event/1'})
