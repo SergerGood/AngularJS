@@ -10,7 +10,9 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = true;
         $scope.sortorder = 'name';
 
-        $scope.event = evenData.event;
+        evenData.getEvent(function (event) {
+            $scope.event = event;
+        });
 
         $scope.upVoteSession = function (session) {
             session.upVoteCount++;
