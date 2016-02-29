@@ -1,0 +1,36 @@
+﻿using Microsoft.AspNet.Mvc;
+using Microsoft.Extensions.PlatformAbstractions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
+
+namespace AppData.Controllers
+{
+    [Route("api/[controller]")]
+    public class EventController : Controller
+    {
+        private readonly IApplicationEnvironment appEnvironment;
+
+        public EventController(IApplicationEnvironment appEnvironment)
+        {
+            this.appEnvironment = appEnvironment;
+        }
+
+        public JToken Get(string id = null)
+        {
+            var path = appEnvironment.ApplicationBasePath;
+            var fullPath = Path.Combine(path, @"../app/data/event", id + ".json");
+            var text = System.IO.File.ReadAllText(fullPath);
+
+            return JObject.Parse(text);
+        }
+
+        public void Post(string id, JObject eventData)
+        {
+            var path = appEnvironment.ApplicationBasePath;
+            var fullPath = Path.Combine(path, @"../app/data/event", id + ".json");
+
+            System.IO.File.WriteAllText(fullPath, eventData.ToString(Formatting.None));
+        }
+    }
+}
