@@ -1,1 +1,6 @@
 .idea/
+packages/
+.vs/
+AppData/bin/
+AppData/obj/
+_ReSharper.Caches/
