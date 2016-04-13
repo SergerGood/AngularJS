@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, evenData, $log) {
+    function EventController($scope, evenData) {
 
         $scope.snippet = '<span style="color:red;">hi there</span>';
         $scope.boolValue = true;
@@ -10,11 +10,10 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = true;
         $scope.sortorder = 'name';
 
-        evenData.getEvent
-        .success(function (event) { $scope.event = event; })
-        .error(function(data, status, headers, config){
-            $log.warn(data, status, headers(), config)
-        });
+        evenData.getEvent()
+            .$promise
+            .then(function (event) { $scope.event = event; console.log(event); })
+            .catch( function (response) { console.log(response);});
 
         $scope.upVoteSession = function (session) {
             session.upVoteCount++;
