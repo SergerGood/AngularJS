@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, evenData, $anchorScroll) {
+    function EventController($scope, evenData, $anchorScroll, $routeParams) {
 
         $scope.snippet = '<span style="color:red;">hi there</span>';
         $scope.boolValue = true;
@@ -10,7 +10,7 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = true;
         $scope.sortorder = 'name';
 
-        evenData.getEvent()
+        evenData.getEvent($routeParams.eventId)
             .$promise
             .then(function (event) { $scope.event = event; console.log(event); })
             .catch( function (response) { console.log(response);});

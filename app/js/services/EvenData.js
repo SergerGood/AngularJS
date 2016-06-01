@@ -4,8 +4,8 @@ eventsApp.factory('evenData', function ($resource) {
         {"getAll": {method: "GET", isArray:true, params:{something:"foo"}}});
 
     return{
-        getEvent: function(){
-            return resource.get({id:1});
+        getEvent: function(eventId){
+            return resource.get({id: eventId});
         },
         save: function (event) {
             event.id = 999;
