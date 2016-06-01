@@ -1,7 +1,12 @@
 'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, evenData, $anchorScroll, $routeParams) {
+    function EventController($scope, evenData, $anchorScroll, $routeParams, $route) {
+
+
+        console.log($route.current.params.foo);
+        console.log($route.current.pathParams.eventId);
+        console.log($routeParams.eventId);
 
         $scope.snippet = '<span style="color:red;">hi there</span>';
         $scope.boolValue = true;
@@ -9,6 +14,10 @@ eventsApp.controller('EventController',
         $scope.myclass = "blue";
         $scope.buttonDisabled = true;
         $scope.sortorder = 'name';
+
+        $scope.reload = function(){
+            $route.reload();
+        };
 
         evenData.getEvent($routeParams.eventId)
             .$promise
