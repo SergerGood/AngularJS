@@ -5,3 +5,4 @@ AppData/bin/
 AppData/obj/
 _ReSharper.Caches/
 app/data/event/999.json
+node_modules/

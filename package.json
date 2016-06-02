@@ -14,5 +14,8 @@
   "dependencies": {
     "body-parser": "1.13.1",
     "express": "4.13.0"
+  },
+  "devDependencies": {
+    "karma-firefox-launcher": "^1.0.0"
   }
 }
