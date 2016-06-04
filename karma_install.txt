@@ -1,9 +1,10 @@
 npm install karma
 npm install karma-chrome-launcher
 npm install karma-chrome-launcher karma-jasmine
+npm install jasmine-core
 npm install karma-cli -g
 
 karma init
 > **/*.js
 
-karma start test/karma.config.js
+karma start test/karma.conf.js
