@@ -1,6 +1,6 @@
 'use strict';
 
-describe('EventListController', function () {
+describe('EventListControllerSpec', function () {
 
     var $controllerConstructor, scope, mockEvenData;
 
