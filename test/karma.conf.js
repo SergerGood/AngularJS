@@ -9,7 +9,8 @@ module.exports = function(config){
       '../test/lib/angular-mocks.js',
       '../test/lib/sinon-1.15.0.js',
       'js/**/*.js',
-      '../test/unit/**/*.js'
+      '../test/unit/**/*.js',
+        'datepickerDirectiveFiles/calendarHelper.js'
     ],
 
     autoWatch : true,
