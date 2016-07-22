@@ -3,6 +3,7 @@ npm install karma-chrome-launcher
 npm install karma-chrome-launcher karma-jasmine
 npm install jasmine-core
 npm install karma-cli -g
+npm install karma-ng-html2js-preprocessor
 
 karma init
 > **/*.js

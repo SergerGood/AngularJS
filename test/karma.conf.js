@@ -3,6 +3,14 @@ module.exports = function(config){
 
     basePath : '../app',
 
+    preprocessor:{
+      '**/*.html':'ng-html2js-preprocessor'
+    },
+
+    /*ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/'
+    },*/
+
     files : [
       'lib/angular/angular.js',
       'lib/angular/angular-*.js',
@@ -10,7 +18,8 @@ module.exports = function(config){
       '../test/lib/sinon-1.15.0.js',
       'js/**/*.js',
       '../test/unit/**/*.js',
-        'datepickerDirectiveFiles/calendarHelper.js'
+        'datepickerDirectiveFiles/calendarHelper.js',
+        'partials/directives/*.html'
     ],
 
     autoWatch : true,
@@ -21,7 +30,8 @@ module.exports = function(config){
 
     plugins : [
       'karma-chrome-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-ng-html2js-preprocessor'
     ],
 
     junitReporter : {
