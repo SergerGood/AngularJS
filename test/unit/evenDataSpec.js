@@ -42,7 +42,7 @@ describe('evenData', function () {
         })
     );
 
-    it('should set the id to 999 when save is calles',
+    /*it('should set the id to 999 when save is calles',
 
         inject(function(evenData, $httpBackend){
 
@@ -53,6 +53,6 @@ describe('evenData', function () {
 
             expect(event.id).toBe(999);
         })
-    );
+    );*/
 
 });
