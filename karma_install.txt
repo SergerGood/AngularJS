@@ -9,3 +9,12 @@ karma init
 > **/*.js
 
 karma start test/karma.conf.js
+
+
+
+npm install -g protractor
+npm install -g webdriver-manager
+webdriver-manager update
+webdriver-manager start
+
+protractor test/protractor.config.js
