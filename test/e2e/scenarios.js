@@ -35,6 +35,32 @@ describe('event registrtion app', function () {
 
             var list = element.all(by.repeater('session in event.sessions'));
             expect(list.count()).toEqual(3);
+        });
+
+        it('should have 1 seesion is shoosen', function () {
+
+            var selectElement = element(by.model('query.level'));
+            selectElement.element(by.cssContainingText('option', 'Introductory')).click();
+
+            var list = element.all(by.repeater('session in event.sessions'));
+            expect(list.count()).toEqual(1);
+        });
+
+        it('should sort correctly when sortOrder is changed', function () {
+
+            var selectElement = element(by.model('sortorder'));
+            selectElement.element(by.cssContainingText('option', 'Votes')).click();
+
+            var firstSession = element.all(by.repeater('session in event.sessions')).first();
+            var firstSessionName = firstSession.element(by.binding('name')).getText();
+            expect(firstSessionName).toEqual('Directives Masterclass');
+        });
+
+        it('should increment the vote count when session is upvoted', function () {
+
+           element.all(by.deepCss('div.votingButton')).first().click();
+            var firstVoteCount = element.all(by.binding('session.upVoteCount')).first();
+            expect(firstVoteCount.getText()).toEqual('1');
         })
     });
 });
